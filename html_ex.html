@@ -1,0 +1,34 @@
+<!Doctype html>
+<head>
+<h1>Register</h1>
+</head>
+
+<body>
+<form>
+<p>First Name: <input type="text" placeholder="John" required> Last Name: <input type="text" placeholder="Smith" required></p>
+<p>Male <input type="radio" name="gender"> Female <input type="radio" name="gender"> Other <input type="radio" name="gender"></p>
+<p>Email: <input type="email" placeholder="your email" required>  Password: <input type="password" pattern=".{5,10}" required title="5 to 10 characters"></p>
+<p>Birthday:
+	<select placeholder="Month">
+		<option>Month</option>
+		<option>Jan</option>
+		<option>Feb</option>
+		<option>Mar</option>
+	</select>
+	<select name="Day">
+		<option>Day</option>
+		<option>1</option>
+		<option>2</option>
+		<option>3</option>
+	</select>
+	<select name="Year">
+		<option>Year</option>
+		<option>2000</option>
+		<option>2001</option>
+		<option>2002</option>
+	</select>
+</p>
+<p>I agree to the terms and conditions <input type="checkbox" required></p>
+<button>Submit</button>
+</form>
+</body>

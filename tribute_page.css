@@ -1,0 +1,49 @@
+body {
+  background-color: lightgrey;
+  font-family: Arial;
+}
+
+#title, h3{
+  margin: auto;
+  text-align: center;
+  padding: 30px;
+}
+
+#subtitle{
+  margin: auto;
+  text-align: center;
+  font-weight: 100;
+}
+
+ul{
+  text-align: left;
+  width: 40%;
+  margin: auto;
+  font-weight: 100;
+}
+
+li{
+    padding: 10px;
+}
+
+.quote{
+  text-align: left;
+  width: 36%;
+  margin: auto;
+  font-style: italic;
+  font-weight: 100;
+  padding-top: 20px;
+}
+
+#img-div{
+  margin: auto;
+  font-weight: 100;
+  text-align: center;
+}
+
+#image{
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: auto;
+}

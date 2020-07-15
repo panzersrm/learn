@@ -1,13 +1,14 @@
-function mutation(arr) {
-  let one = arr[1].toLowerCase().match(/\w/g);
-  let zero = arr[0].toLowerCase().match(/\w/g);
-  let j = 0;
-  for (let i=0; i<one.length; i++){
-      if (zero.indexOf(one[i]) != -1){
-        j++;
+function destroyer(arr) {
+  var args = arguments.slice(1);
+
+  for (var i = 0; i < arr.length; i++) {
+    for (var j = 0; j < args.length; j++) {
+      if (arr[i] === args[j]) {
+        delete arr[i];
       }
     }
-  return j==one.length;
+  }
+  return arr.filter(Boolean);
 }
 
-console.log(mutation(["floor", "for"]));
+console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));

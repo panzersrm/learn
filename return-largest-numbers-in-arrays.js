@@ -1,13 +1,14 @@
-function getIndexToIns(arr, num) {
-  // Find my place in this sorted array.
-  var times = arr.length; // runs the for loop once for each thing in the array
-  var count = 0;
-  for (var i = 0; i < times; i++) {
-    if (num > arr[i]) {
-      count++;
-    }
-  } // counts how many array numbers are smaller than num
-  return count; // the above equals num's position in a sorted array
+function largestOfFour(arr) {
+  
+  function max(ar){
+    return ar.sort((a,b)=>b-a)[0];
+  }
+  
+  let res = [];
+  for (let i=0; i<arr.length; i++){
+    res.push(max(arr[i]));
+  }
+  return res;
 }
 
-console.log(getIndexToIns([40, 58, 80, 60], 50));
+console.log(largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39], [1000, 1001, 857, 1]]));

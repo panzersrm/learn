@@ -1,15 +1,13 @@
 function getIndexToIns(arr, num) {
-  let as = arr.sort(function(a, b){return a - b});
-  for (let i=1;i<as.length+1;i++){
-     if (num>as[i-1] && num<=as[i]){
-      return i;
-    } 
+  // Find my place in this sorted array.
+  var times = arr.length; // runs the for loop once for each thing in the array
+  var count = 0;
+  for (var i = 0; i < times; i++) {
+    if (num > arr[i]) {
+      count++;
     }
-    if (num>=as[as.length-1]){
-      return as.length;
-    } else {
-      return 0;
-    }
+  } // counts how many array numbers are smaller than num
+  return count; // the above equals num's position in a sorted array
 }
 
-console.log(getIndexToIns([3, 10, 5], 3));
+console.log(getIndexToIns([40, 58, 80, 60], 50));

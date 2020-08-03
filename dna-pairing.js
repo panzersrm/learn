@@ -1,11 +1,19 @@
-function pairElement() {
-  let a = b = 0;
-  a++;
-  return a;
+function pairElement(str) {
+  let base = {
+    A: "T",
+    T: "A",
+    C: "G",
+    G: "C"
+  };
+  let arr = str.match(/\w/g);
+  
+  function ar(st){
+    let res =[];
+    res.push(st);
+    res.push(base[st]);
+    return res;
+  }
+  return arr.map(el=>ar(el));
 }
 
-
-console.log(pairElement());
-
-console.log(typeof a);
-console.log(typeof b);
+console.log(pairElement("ATCGA"));

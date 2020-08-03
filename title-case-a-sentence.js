@@ -1,6 +1,9 @@
-function frankenSplice(arr1, arr2, n) {
-  let arr = [...arr2];
-  return arr.splice(n, 1, 45, 44);
+function titleCase(str) {
+  let ar = str.split(" ");
+  let arL = ar.map(el=>el.toLowerCase());
+  return arL
+          .map(el=>el.charAt(0).toUpperCase()+el.slice(1))
+          .join(" ");
 }
 
-console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
+console.log(titleCase("I'm a little tea pot"));

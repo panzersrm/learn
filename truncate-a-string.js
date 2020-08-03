@@ -1,3 +1,8 @@
-let mixArr= [{id: 1}, [2,3,4], true];
-let array1 = mixArr.concat('hello');
-console.log(array1)
+function truncateString(str, num) {
+  if (num>=str.length){
+    return str;
+  }
+  return str.slice(0,num)+"...";
+}
+
+console.log(truncateString("A-tisket a-tasket A green and yellow basket", 8));

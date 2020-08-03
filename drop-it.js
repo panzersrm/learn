@@ -1,4 +1,8 @@
-let arr=[1,[[2]]];
-let flat = [].concat(...arr);
+function dropElements(arr, func) {
+while (!func(arr[0]) && arr.length>0){
+  arr.shift();
+}
+return arr;
+}
 
-console.log(flat)
+console.log(dropElements([1, 2, 3, 9, 2], function(n) {return n > 2;}));

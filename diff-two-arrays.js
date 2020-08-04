@@ -1,37 +1,18 @@
-function removeItemAll(arr, value) {
-  var i = 0;
-  while (i < arr.length) {
-    if (arr[i] === value) {
-      arr.splice(i, 1);
-    } else {
-      ++i;
-    }
-  }
-  return arr;
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  arr1.map(el=>arr2.indexOf(el)<0?newArr.push(el):false);
+  arr2.map(el=>arr1.indexOf(el)<0?newArr.push(el):false);
+  return newArr;
 }
 
-function destroyer(arr) {
-  for(let i=1; i<arguments.length; i++){
-    removeItemAll(arr,arguments[i]);
-  }
-  return arr;
-}
+console.log(diffArray([1, 2, 3, 5], [1, 2, 3, 4, 5]));
 
-
-console.log(destroyer([1, 2, 3, 1, 2, 3], 2, 3));
 
 //FCC solution:
 /*
-function destroyer(arr) {
-  var args = Array.from(arguments).slice(1); //
-
-  for (var i = 0; i < arr.length; i++) {
-    for (var j = 0; j < args.length; j++) {
-      if (arr[i] === args[j]) {
-        delete arr[i];
-      }
-    }
-  }
-  return arr.filter(Boolean);
+function diffArray(arr1, arr2) {
+  return arr1
+    .concat(arr2)
+    .filter(item => !arr1.includes(item) || !arr2.includes(item));
 }
 */

@@ -58,9 +58,15 @@ class Set {
   difference(set){
     const newSet = new Set();
     const inter = this.intersection(set);
-    console.log(inter);
     this.values().map(el => !inter.has(el) ? newSet.add(el) : false);
     return newSet;
+  }
+
+  isSubsetOf(set){
+    let newSet = this.intersection(set);
+    let result =  [];
+    this.values().map(el => newSet.has(el) ? false : result.push(1));
+    return result.length===0;
   }
   // Only change code above this line
 }
@@ -69,10 +75,10 @@ class Set {
 
 let sa = new Set();
 
-sa.dictionary = {a: true, b: true, c:true};
+sa.dictionary = {a: true, b: true};
 
 let sb = new Set();
 
 sb.dictionary = {a: true, b: true, d:true, e:true};
 
-console.log(sa.difference(sb));
+console.log(sa.isSubsetOf(sb));
